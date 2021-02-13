@@ -1,1 +1,6 @@
 theme: jekyll-theme-cayman
+title: 光尘谈
+description: 价值点滴，高光时刻
+show_downloads: false
+github:
+  is_project_page: false
