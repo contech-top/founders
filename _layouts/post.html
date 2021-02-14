@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "zh-CN" }}">
+  {% include head.html %}
+  <body>
+     <a id="back-to-home" href="/index.html">首页</a> ｜ <a id="skip-to-content" href="#content">正文</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      <hr>
+      <h3>{{ page.date | date_to_string }}
+        {% assign author = site.authors | where: 'short_name', page.author | first %}
+        {% if author %}
+        - <a class="head-link" href="{{ author.url }}">{{ author.name }}</a>
+        {% else %}
+        - <span>{{ author.name }}</span>
+        {% endif %}
+      </h3>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+
+      <footer class="site-footer">
+        All rights reserved. {{ page.date | date_to_string }}  - {{ page.author }}
+      </footer>
+    </main>
+  </body>
+</html>

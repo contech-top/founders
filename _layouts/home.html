@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "zh-CN" }}">
+  {% include head.html %}
+  <body>
+    {% include home_header.html %}
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+      {% for post in site.posts %}
+        {% include post_item.html %}
+      {% endfor %}
+      {% include home_footer.html %}
+    </main>
+  </body>
+</html>

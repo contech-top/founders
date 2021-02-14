@@ -1,0 +1,10 @@
+<div>
+  <hr>
+  <h3>
+     -- <a title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> --
+  </h3>
+  <h4>
+    <a title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d, %Y" }} - {{ post.author }}</a>
+  </h4>
+  <p>{{ post.content | strip_html | truncatewords:30 }}</p>
+</div>

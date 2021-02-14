@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "zh-CN" }}">
+  {% include head.html %}
+  <body>
+    <a id="back-to-home" href="/index.html">首页</a>
+    <header class="page-header" role="banner">
+      <h1>{{ page.name }} | {{ page.position }}</h1>
+      <h2>{{ content }}</h2>
+    </header>
+      <main id="content" class="main-content" role="main">
+        <h2>文章</h2>
+        <ul>
+          {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
+          {% for post in filtered_posts %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </main>
+  </body>
+</html>

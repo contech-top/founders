@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "zh-CN" }}">
+  {% include head.html %}
+  <body>
+    <a id="back-to-home" href="/index.html">首页</a>
+    {% if page.content_at_off %}
+    {% else %}
+    ｜ <a id="skip-to-content" href="#content">正文</a>
+    {% endif %}
+    <header class="page-header" role="banner">
+      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+    </main>
+  </body>
+</html>
